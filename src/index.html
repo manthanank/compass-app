@@ -1,11 +1,80 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="utf-8">
-  <title>CompassApp</title>
+  <title>Apex Compass | Professional Digital Compass & Outdoor GPS Navigation</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Apex Compass | Professional Digital Compass & Outdoor GPS Navigation">
+  <meta name="description" content="Apex Compass is an outdoor companion app with high-precision digital compass (True North & Magnetic North), offline saved waypoints, real-time GPS telemetry, elevation profile, and specialized hiking, motorcycle, and marine boating navigation modes.">
+  <meta name="keywords" content="digital compass, outdoor navigation, magnetic north, true north, GPS coordinates, altitude meter, hiking trail recorder, motorcycle heading indicator, marine boating compass, offline waypoints, elevation profile">
+  <meta name="author" content="Apex Outdoor Tools">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  
+  <!-- Favicon (.ico) -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apexcompass.app/">
+  <meta property="og:title" content="Apex Compass | Digital Compass & Outdoor Navigation">
+  <meta property="og:description" content="High-precision digital compass with magnetic and true north tracking, altitude telemetry, offline saved waypoints, and specialized outdoor modes for hiking, boating, and riding.">
+  <meta property="og:image" content="https://apexcompass.app/favicon.ico">
+  <meta property="og:site_name" content="Apex Compass">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://apexcompass.app/">
+  <meta property="twitter:title" content="Apex Compass | Digital Compass & Outdoor Navigation">
+  <meta property="twitter:description" content="High-precision digital compass with magnetic and true north tracking, altitude telemetry, offline saved waypoints, and specialized outdoor modes.">
+  <meta property="twitter:image" content="https://apexcompass.app/favicon.ico">
+
+  <!-- Mobile & PWA Appearance -->
+  <meta name="theme-color" content="#0f1115">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Apex Compass">
+  
+  <link rel="canonical" href="https://apexcompass.app/">
+  
+  <!-- Structured Data / Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Apex Compass & Outdoor Companion",
+    "url": "https://apexcompass.app",
+    "applicationCategory": "NavigationApplication",
+    "operatingSystem": "All",
+    "description": "High-precision digital compass with magnetic and true north tracking, altitude telemetry, offline saved waypoints, elevation profile, and hiking, motorcycle, and marine boating modes.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Real-time magnetic & true north digital compass dial",
+      "GPS coordinates, speed, and barometric altitude telemetry",
+      "Interactive dark satellite & terrain map",
+      "Offline waypoint saving and destination navigation arrow",
+      "Hiking mode with elevation profile and GPX export",
+      "Motorcycle high-visibility HUD & lean angle sensor",
+      "Marine boating mode with wind vector, swell height, and tide state",
+      "Emergency SOS coordinate generator and visual strobe"
+    ]
+  }
+  </script>
+  
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
   <app-root></app-root>

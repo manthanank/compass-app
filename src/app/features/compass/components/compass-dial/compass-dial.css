@@ -1,0 +1,218 @@
+.compass-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.heading-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.heading-deg {
+  font-size: clamp(44px, 12vw, 60px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: var(--color-text-main, #ffffff);
+  line-height: 1;
+  font-feature-settings: 'tnum';
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 25px rgba(239, 68, 68, 0.3);
+}
+
+.heading-cardinal {
+  font-size: clamp(14px, 4vw, 18px);
+  font-weight: 800;
+  color: var(--color-primary, #ef4444);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.heading-mode-badge {
+  margin-top: 4px;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: var(--color-input-bg, rgba(255, 255, 255, 0.06));
+  color: var(--color-text-muted, #9ca3af);
+  letter-spacing: 1.5px;
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.1));
+}
+
+.heading-mode-badge.true-north {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.dial-outer {
+  width: clamp(250px, 75vw, 320px);
+  height: clamp(250px, 75vw, 320px);
+  border-radius: 50%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 60%),
+    radial-gradient(circle, #1a1d24 0%, #08090c 100%);
+  border: 6px solid #222630;
+  box-shadow: 
+    0 0 50px rgba(0, 0, 0, 0.7),
+    inset 0 0 40px rgba(0, 0, 0, 0.9),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.dial-outer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 45%, rgba(239, 68, 68, 0.03) 70%, transparent 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.top-indicator {
+  position: absolute;
+  top: 8px;
+  color: var(--color-primary, #ef4444);
+  font-size: 14px;
+  z-index: 10;
+  line-height: 1;
+  filter: drop-shadow(0 0 8px #ef4444);
+}
+
+.dial-ring {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 120ms linear;
+  transform-origin: center center;
+}
+
+.cardinal {
+  position: absolute;
+  font-weight: 900;
+  color: var(--color-text-main, #e5e7eb);
+  font-size: clamp(14px, 3.5vw, 17px);
+  user-select: none;
+  letter-spacing: 1px;
+}
+
+.cardinal.north {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color-primary, #ef4444);
+  font-size: clamp(18px, 4.5vw, 22px);
+  text-shadow: 0 0 12px rgba(239, 68, 68, 0.6);
+}
+
+.cardinal.south {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cardinal.east {
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.cardinal.west {
+  left: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.cardinal.north-east {
+  top: 46px;
+  right: 46px;
+  font-size: 10px;
+  color: var(--color-text-muted, #6b7280);
+}
+
+.cardinal.north-west {
+  top: 46px;
+  left: 46px;
+  font-size: 10px;
+  color: var(--color-text-muted, #6b7280);
+}
+
+.cardinal.south-east {
+  bottom: 46px;
+  right: 46px;
+  font-size: 10px;
+  color: var(--color-text-muted, #6b7280);
+}
+
+.cardinal.south-west {
+  bottom: 46px;
+  left: 46px;
+  font-size: 10px;
+  color: var(--color-text-muted, #6b7280);
+}
+
+.ticks-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.tick-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  transform-origin: 50% 50%;
+}
+
+.tick-line::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 1px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.tick-line.medium::before {
+  height: 12px;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.tick-line.major::before {
+  height: 16px;
+  width: 2px;
+  background: var(--color-primary, #ef4444);
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.5);
+}
+
+.center-crosshair {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: grid;
+  place-items: center;
+  z-index: 6;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.pivot-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary, #ef4444);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--color-primary, #ef4444);
+}

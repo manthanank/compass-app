@@ -1,0 +1,50 @@
+<div class="dashboard-page">
+  <div class="dashboard-content">
+    <app-header />
+
+    <app-card>
+      <app-compass-dial />
+
+      <div class="telemetry-grid">
+        <app-stat-badge iconName="mountain" label="Altitude" [value]="location.altitude() || '--'" unit="m" />
+        <app-stat-badge iconName="speed" label="Speed" [value]="location.speed() || '0'" unit="km/h" />
+        <app-stat-badge iconName="gps" label="GPS Accuracy" [value]="'±' + (location.accuracy() || 3)" unit="m" />
+      </div>
+
+      <div class="coordinates-pill">
+        GPS Position: <strong>{{ location.latitude()?.toFixed(4) }}°, {{ location.longitude()?.toFixed(4) }}°</strong>
+      </div>
+
+      <app-sensor-controls />
+    </app-card>
+
+    <app-card>
+      <app-nav-hud />
+    </app-card>
+
+    <app-card>
+      <app-interactive-map />
+    </app-card>
+
+    @if (modeService.currentMode() !== 'standard') {
+      <app-card>
+        @switch (modeService.currentMode()) {
+          @case ('hiking') {
+            <app-hiking-mode />
+          }
+          @case ('motorcycle') {
+            <app-motorcycle-mode />
+          }
+          @case ('marine') {
+            <app-marine-mode />
+          }
+          @case ('emergency') {
+            <app-emergency-sos />
+          }
+        }
+      </app-card>
+    }
+  </div>
+
+  <app-bottom-nav />
+</div>

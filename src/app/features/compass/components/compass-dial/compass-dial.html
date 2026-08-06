@@ -1,0 +1,44 @@
+<div class="compass-container">
+  <div class="heading-header">
+    <span class="heading-deg">{{ compass.heading() }}°</span>
+    <span class="heading-cardinal">{{ compass.heading() | headingName }}</span>
+    <span class="heading-mode-badge" [class.true-north]="compass.useTrueNorth()">
+      {{ compass.useTrueNorth() ? 'TRUE NORTH' : 'MAGNETIC' }}
+    </span>
+  </div>
+
+  <div class="dial-outer">
+    <div class="top-indicator">▼</div>
+
+    <div 
+      class="dial-ring" 
+      [style.transform]="'rotate(' + (-compass.heading()) + 'deg)'">
+      
+      <div class="cardinal north">N</div>
+      <div class="cardinal north-east">NE</div>
+      <div class="cardinal east">E</div>
+      <div class="cardinal south-east">SE</div>
+      <div class="cardinal south">S</div>
+      <div class="cardinal south-west">SW</div>
+      <div class="cardinal west">W</div>
+      <div class="cardinal north-west">NW</div>
+
+      <div class="ticks-container">
+        @for (tick of [].constructor(36); track $index) {
+          <div 
+            class="tick-line"
+            [class.major]="$index % 9 === 0"
+            [class.medium]="$index % 3 === 0 && $index % 9 !== 0"
+            [style.transform]="'rotate(' + ($index * 10) + 'deg)'">
+          </div>
+        }
+      </div>
+    </div>
+
+    <app-destination-arrow />
+
+    <div class="center-crosshair">
+      <div class="pivot-dot"></div>
+    </div>
+  </div>
+</div>

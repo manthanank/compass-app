@@ -1,0 +1,16 @@
+<nav aria-label="Main Navigation">
+  <button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" aria-label="Compass Dashboard">
+    <app-icon name="compass" [size]="20" class="icon" />
+    <span class="label">Compass</span>
+  </button>
+
+  <button routerLink="/places" routerLinkActive="active" aria-label="Saved Places">
+    <app-icon name="places" [size]="20" class="icon" />
+    <span class="label">Places</span>
+  </button>
+
+  <button routerLink="/settings" routerLinkActive="active" aria-label="Settings & Calibration">
+    <app-icon name="settings" [size]="20" class="icon" />
+    <span class="label">Settings</span>
+  </button>
+</nav>
